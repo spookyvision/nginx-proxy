@@ -5,6 +5,10 @@ nginx-proxy sets up a container running nginx and [docker-gen][1].  docker-gen g
 
 See [Automated Nginx Reverse Proxy for Docker][2] for why you might want to use this.
 
+### This fork
+
+Inherits from `spookyvision/nginx-full` to enable auth requests.
+
 ### Usage
 
 To run it:
