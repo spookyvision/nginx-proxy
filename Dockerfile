@@ -1,5 +1,5 @@
-FROM nginx:1.13
-LABEL maintainer="Jason Wilder mail@jasonwilder.com"
+FROM spookyvision/nginx-full
+LABEL maintainer="Anatol Ulrich anatol@versteht.es"
 
 # Install wget and install/updates certificates
 RUN apt-get update \
