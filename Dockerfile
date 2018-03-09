@@ -14,6 +14,12 @@ RUN apt-get update \
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf \
  && sed -i 's/worker_processes  1/worker_processes  auto/' /etc/nginx/nginx.conf
 
+
+# increase body size
+RUN { \
+      echo 'client_max_body_size 50m;'; \
+    } > /etc/nginx/conf.d/my_proxy.conf
+
 # Install Forego
 ADD https://github.com/jwilder/forego/releases/download/v0.16.1/forego /usr/local/bin/forego
 RUN chmod u+x /usr/local/bin/forego
