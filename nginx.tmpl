@@ -118,8 +118,7 @@ server {
 {{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}
 
 {{ $host := trim $host }}
-{{ $is_regexp := hasPrefix "~" $host }}
-{{ $upstream_name := when $is_regexp (sha1 $host) $host }}
+{{ $upstream_name := "appserver" }}
 
 # {{ $host }}
 upstream {{ $upstream_name }} {
